@@ -7,7 +7,7 @@ const todoListArray = [{
   index: 1,
 },
 {
-  description: 'Code to sections into the app',
+  description: 'getting ready for the wedding ',
   completed: false,
   index: 5,
 },
