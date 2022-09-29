@@ -1,5 +1,4 @@
 import './style.css';
-import _ from 'lodash';
 
 const todoListArray = [{
   description: 'SetUp webpack',
