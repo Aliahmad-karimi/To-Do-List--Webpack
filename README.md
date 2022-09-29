@@ -30,11 +30,11 @@ To get the content of this project locally you need to run the following command
 ### Setup
 1. Download the **Zip** file or clone the repo with:
 ```bash
-git clone git@github.com:Strangeal/Awesome-books.git
+[git clone git@github.com:Strangeal/Awesome-books.git](https://github.com/Aliahmad-karimi/To-Do-List--Webpack.git)
 ```
 3. To access cloned directory run:
 ```bash
-cd MyPortfolio
+cd main
 ```
 3. Open it with the live server
 
