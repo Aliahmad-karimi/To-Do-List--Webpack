@@ -1,14 +1,42 @@
+import './style.css';
 import _ from 'lodash';
-import './style.css'
 
-function component() {
-    const element = document.createElement('div');
+const todoListArray = [{
+  description: 'SetUp webpack',
+  completed: true,
+  index: 1,
+},
+{
+  description: 'Code to sections into the app',
+  completed: false,
+  index: 5,
+},
+{
+  description: 'Take a walk for 45mins',
+  completed: true,
+  index: 4,
+},
+{
+  description: 'Learn two subtopics each day after classes hours',
+  completed: true,
+  index: 3,
+},
+{
+  description: 'Read 5 pages of personal development everyday',
+  completed: false,
+  index: 2,
+},
+];
 
-    // Lodash, currently included via a script, is required for this line to work
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    element.classList.add('hello');
+todoListArray.sort((a, b) => a.index - b.index);
 
-    return element;
-  }
-
-  document.body.appendChild(component());
+const todoFormEl = document.querySelector('.todo__form');
+todoListArray.forEach((each) => {
+  todoFormEl.innerHTML += `
+  <div class="formList">
+    <input class="todo__item" type="checkbox">
+    <label for="input1" class="listLabel">${each.description}</label>
+    <i class="fa-solid fa-ellipsis"></i>
+  </div><hr>
+  `;
+});
