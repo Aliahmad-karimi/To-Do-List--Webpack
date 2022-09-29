@@ -3,12 +3,12 @@ import './style.css';
 const todoListArray = [{
   description: 'SetUp webpack',
   completed: true,
-  index: 1,
+  index: 6,
 },
 {
   description: 'getting ready for the wedding ',
   completed: false,
-  index: 5,
+  index: 1,
 },
 {
   description: 'Take a walk for 45mins',
@@ -29,7 +29,7 @@ const todoListArray = [{
 
 todoListArray.sort((a, b) => a.index - b.index);
 
-const todoFormEl = document.querySelector('.todo__form');
+const todoFormEl = document.querySelector('.showList');
 todoListArray.forEach((each) => {
   todoFormEl.innerHTML += `
   <div class="formList">
