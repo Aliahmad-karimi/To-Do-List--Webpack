@@ -12,19 +12,20 @@
 <body>
     <main>
         <section id="todo">
-            <div class="head">
-                <h3 id="head">Today's To Do</h3>
-                <a href="#"><i class="fa-solid fa-arrows-rotate"></i></a>
+            <div id="todo-header">
+                <h3>Today's To Do List</h3>
+                <span class="font-awsome-icon"><i class="fa-solid fa-sync"></i></span>
             </div>
-            <div class="toDoInput">
-                <input type="text" name="toDo" id="tInput" placeholder="Add to your List....">
-                <a href="#" id="enter"><i class="fa-solid fa-turn-down"></i></a>
+            <div class="inputs-holder">
+                <input class="input-form" type="text" name="tasks" id="input-tasks" placeholder="Add your tasks...">
+                <span class="add">&crarr;</span>
             </div>
 
             <div id="todo-lists"></div>
             <div id="button-holder">
                 <button id="clear" value="clear" type="button">Clear all completed </button>
             </div>
+
         </section>
     </main>
 </body>
