@@ -1,41 +1,34 @@
+/* eslint-disable max-classes-per-file */
 import './style.css';
 
-const todoListArray = [{
-  description: 'SetUp webpack',
-  completed: true,
-  index: 6,
-},
-{
-  description: 'getting ready for the wedding ',
-  completed: false,
-  index: 1,
-},
-{
-  description: 'Take a walk for 45mins',
-  completed: true,
-  index: 4,
-},
-{
-  description: 'Learn two subtopics each day after classes hours',
-  completed: true,
-  index: 3,
-},
-{
-  description: 'Read 5 pages of personal development everyday',
-  completed: false,
-  index: 2,
-},
-];
+import TasksObject from './modules/task';
+import WindowLoader from './modules/windowsLoader';
+import LocalDataStorage from './modules/LocatStorage';
+import CreateTasks from './modules/add-tasks';
 
-todoListArray.sort((a, b) => a.index - b.index);
+const textInput = document.querySelector('.input-form');
 
-const todoFormEl = document.querySelector('.showList');
-todoListArray.forEach((each) => {
-  todoFormEl.innerHTML += `
-  <div class="formList">
-    <input class="todo__item" type="checkbox">
-    <label for="input1" class="listLabel">${each.description}</label>
-    <i class="fa-solid fa-ellipsis"></i>
-  </div><hr>
-  `;
+const tasks = [];
+
+textInput.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter' && textInput.value) {
+    const taskObject = new TasksObject(textInput.value, false, tasks.length);
+    tasks.push(taskObject);
+    CreateTasks.createTask(tasks);
+    const content = document.querySelectorAll('.content');
+    for (let index = 0; index < content.length; index += 1) {
+      content[index].textContent = tasks[index].description;
+    }
+
+    textInput.value = null;
+    LocalDataStorage.addToLocalDataStorage(tasks);
+  }
 });
+
+const localData = JSON.parse(localStorage.getItem('todo'));
+
+localData.forEach((element) => {
+  tasks.push(element);
+});
+
+WindowLoader.loadWindow(tasks);
