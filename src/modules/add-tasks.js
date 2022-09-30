@@ -1,4 +1,4 @@
-const toDoList = document.querySelector('.toDoShow');
+const toDoList = document.querySelector('#todo-lists');
 const clearBtn = document.querySelector('button');
 
 export default class CreateTasks {
