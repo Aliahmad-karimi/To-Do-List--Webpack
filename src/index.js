@@ -1,10 +1,10 @@
 /* eslint-disable max-classes-per-file */
 import './style.css';
 
-import TasksObject from './modules/task';
-import WindowLoader from './modules/windowsLoader';
-import LocalDataStorage from './modules/LocatStorage';
-import CreateTasks from './modules/add-tasks';
+import TasksObject from './modules/task.js';
+import WindowLoader from './modules/windowsLoader.js';
+import LocalDataStorage from './modules/LocatStorage.js';
+import CreateTasks from './modules/add-tasks.js';
 
 const textInput = document.querySelector('.input-form');
 

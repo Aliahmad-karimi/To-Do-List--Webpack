@@ -54,7 +54,12 @@ h3 {
 }
 
 input[type='checkbox'] {
-  margin: 20px;
+  margin: 0 12px;
+}
+
+input[type='checkbox']:checked {
+  height: auto;
+  width: auto;
 }
 
 input::placeholder {

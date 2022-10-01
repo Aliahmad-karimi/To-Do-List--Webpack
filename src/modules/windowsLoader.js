@@ -1,4 +1,4 @@
-import CreateTasks from "./add-tasks";
+import CreateTasks from './add-tasks.js';
 
 export default class WindowLoader {
     static loadWindow = () => {
